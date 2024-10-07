@@ -22,14 +22,15 @@ select *
         return $tableauReponse;
     }
 
-    public static function MaTable_Insert(mixed $champ1, mixed $champ2)
+    public static function MaTable_Insert(mixed $nom, mixed $prenom, mixed $motDePasse)
     {
         $connexionPDO = Singleton_ConnexionPDO::getInstance();
         $requetePreparee = $connexionPDO->prepare('
-        insert into `table` (champ1, champ2) values (:champ1, :champ2)');
+        insert into `table` (nom, prenom, motDePasse) values (:nom, :prenom, :motDePasse)');
         $reponse = $requetePreparee->execute(array(
-            "champ1" => $champ1,
-            "champ2" => $champ2
+            "nom" => $nom,
+            "prenom" => $prenom,
+            "motDePasse" => $motDePasse
         ));
         return $reponse;
     }
@@ -57,15 +58,16 @@ select *
         return $tableauReponse;
     }
 
-    public static function MaTable_Update(mixed $id, mixed $champ1, mixed $champ2)
+    public static function MaTable_Update(mixed $id, mixed $nom, mixed $prenom, mixed $motDePasse)
     {
         $connexionPDO = Singleton_ConnexionPDO::getInstance();
         $requetePreparee = $connexionPDO->prepare('
-        update `table` set champ1=:champ1, champ2=:champ2 where id=:id');
+        update `table` set nom=:nom, prenom=:prenom, motDePasse=:motDePasse where id=:id');
         $reponse = $requetePreparee->execute(array(
             "id" => $id,
-            "champ1" => $champ1,
-            "champ2" => $champ2
+            "nom" => $nom,
+            "prenom" => $prenom,
+            "motDePasse" => $motDePasse
         ));
         return $reponse;
     }

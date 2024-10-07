@@ -24,10 +24,12 @@ class Vue_ModifierMaTable extends Vue_Composant
                 <input type='hidden' name='case' value ='maTable'>
                 <input type='hidden' name='action' value ='enregistrerModifier'>
                 <input type='hidden' name='id' value ='".$this->data["id"]."'>
-                <label for='champ1'>champ1</label>
-                <input type='text' name='champ1' value='".$this->data["champ1"]."'><br>
-                <label for='champ2'>champ2</label>
-                <input type='text' name='champ2' value='".$this->data["champ2"]."'><br>
+                <label for='nom'>nom</label>
+                <input type='text' name='nom' value='".$this->data["nom"]."'><br>
+                <label for='prenom'>prenom</label>
+                <input type='text' name='prenom' value='".$this->data["prenom"]."'><br>
+                <label for='motDePasse'>motDePasse</label>
+                <input type='text' name='motDePasse' value='".$this->data["motDePasse"]."'><br>
                 <button type='submit' > Modifier</button>
             </form>
         </div>

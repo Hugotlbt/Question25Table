@@ -22,8 +22,10 @@ class Vue_AccueilMaTable extends Vue_Composant
     <table> 
         <tr>
             <th>id</th>
-            <th>champ1</th>
-            <th>champ2</th>
+            <th>nom</th>
+            <th>prenom</th>
+            <th>motDePasse</th>
+
         </tr>
     ";
         if($this->listeDonnee==null)
@@ -34,8 +36,8 @@ class Vue_AccueilMaTable extends Vue_Composant
         }
         foreach ($this->listeDonnee as $item) {
             $str.="
-            <tr><td><a href='./index.php?case=maTable&action=modifier&id=$item[id]'  > $item[id]</a></td><td>$item[champ1]</td><td>$item[champ2]</td><td>
-            <form>
+            <tr><td><a href='./index.php?case=maTable&action=modifier&id=$item[id]'  > $item[id]</a></td><td>$item[nom]</td><td>$item[prenom]</td><td>$item[motDePasse]</td>
+            <form><td>
                 <input type='hidden' name='case' value ='maTable'>
                 <input type='hidden' name='id' value ='$item[id]'>
                 <button type='submit' name = 'action' value='supprimer'> Supprimer</button>
